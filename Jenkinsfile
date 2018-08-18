@@ -11,5 +11,10 @@ pipeline {
         git(url: 'https://github.com/mitesh51/AntExample.git', branch: 'master', poll: true)
       }
     }
+    stage('build') {
+      steps {
+        bat 'call ant -f build.xml'
+      }
+    }
   }
 }
