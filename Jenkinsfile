@@ -21,12 +21,12 @@ pipeline {
       }
     }
     stage('build') {
-      steps {
+      
         def antHome
         echo 'Build'
         antHome = tool 'apache-ant-1.10.5'
         bat '${antHome}bin/build.xml war'
-      }
+
     }
   }
 }
