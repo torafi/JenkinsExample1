@@ -22,8 +22,11 @@ pipeline {
     }
     stage('build') {
       steps {
-        bat 'call ant -f build.xml'
+        echo 'Build'
       }
     }
+  }
+  environment {
+    antHome = 'apache-ant-1.10.5'
   }
 }
