@@ -23,7 +23,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Build'
-        bat 'withEnv( ["ANT_HOME"] ) { bat \'%ANT_HOME%/bin/ant.bat war\' }'
+        bat 'bat \'%ANT_HOME%/bin/ant.bat war\' '
       }
     }
   }
