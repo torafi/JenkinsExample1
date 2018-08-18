@@ -24,7 +24,7 @@ pipeline {
       steps {
         echo 'Build'
         tool 'apache-ant-1.10.5'
-        bat 'call ant -f build.xml'
+        bat 'def antVersion = \'apache-ant-1.10.5\''
       }
     }
   }
