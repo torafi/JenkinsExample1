@@ -24,6 +24,7 @@ pipeline {
       steps {
         echo 'Build'
         tool 'apache-ant-1.10.5'
+        bat 'ant build'
       }
     }
   }
