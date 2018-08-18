@@ -23,11 +23,9 @@ pipeline {
     stage('build') {
       steps {
         echo 'Build'
-        bat '${tool \'apache-ant-1.10.5\'}/bin/ant.bat war'
+        tool 'apache-ant-1.10.5'
+        bat 'ant.bat war'
       }
     }
-  }
-  environment {
-    ANT_HOME = 'apache-ant-1.10.5'
   }
 }
