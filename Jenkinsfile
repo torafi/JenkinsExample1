@@ -23,7 +23,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Build'
-        bat 'bat \'%ANT_HOME%/bin/ant.bat war\' '
+        bat '%ANT_HOME%/bin/ant.bat war'
       }
     }
   }
