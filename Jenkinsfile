@@ -23,6 +23,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Build'
+        tool(name: 'apache-ant-1.10.5', type: 'apache-ant-1.10.5')
       }
     }
   }
