@@ -23,7 +23,8 @@ pipeline {
     stage('build') {
       steps {
         echo 'Build'
-        bat '%ANT_HOME%/bin/ant.bat war'
+        tool 'apache-ant-1.10.5'
+        bat 'ant.bat war'
       }
     }
   }
