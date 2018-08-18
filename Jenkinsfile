@@ -7,8 +7,17 @@ pipeline {
   }
   stages {
     stage('Code Checkout') {
-      steps {
-        git(url: 'https://github.com/mitesh51/AntExample.git', branch: 'master', poll: true)
+      parallel {
+        stage('Code Checkout') {
+          steps {
+            git(url: 'https://github.com/mitesh51/AntExample.git', branch: 'master', poll: true)
+          }
+        }
+        stage('Test') {
+          steps {
+            echo 'Hello'
+          }
+        }
       }
     }
     stage('build') {
