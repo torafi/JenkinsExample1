@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Code Checkout') {
       steps {
-        git(url: 'https://github.com/mitesh51/spring-petclinic.git', branch: 'master', poll: true)
+        git(url: 'https://github.com/mitesh51/AntExample.git', branch: 'master', poll: true)
       }
     }
   }
