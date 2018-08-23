@@ -13,12 +13,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        tool 'apache-ant-1.10.5'
         script {
           def antHome = tool 'apache-ant-1.10.5';
-          bat "${antHome}/bin/ant -d clean"
+          bat "${antHome}/bin/ant -d clean war"
         }
 
+        archiveArtifacts(artifacts: '**/*.war', onlyIfSuccessful: true)
       }
     }
   }
