@@ -13,7 +13,12 @@ pipeline {
     }
     stage('Build') {
       steps {
-        tool(name: 'apache-ant-1.10.5', type: 'ant -d clean war')
+        tool 'apache-ant-1.10.5'
+        script {
+          def antHome = tool 'apache-ant-1.10.5';
+          bat "${antHome}/bin/ant -d clean"
+        }
+
       }
     }
   }
