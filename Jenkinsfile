@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        tool 'apache-ant-1.10.5'
+        tool(name: 'apache-ant-1.10.5', type: 'ant -d clean war')
       }
     }
   }
