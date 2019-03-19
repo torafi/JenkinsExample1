@@ -23,11 +23,20 @@ pipeline {
     }
 	stage ('Deploy') {
 	steps{
+	script{
+	def cmd_exec(command) {
+    return bat(returnStdout: true, script: "${command}").trim()
 	
-	bat 'C:\\Users\\Hp PC\\Desktop\\GIT_Repositories\\JenkinsExample1\\deploy.bat'
+	cmd_exec('curl -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/sample&update=true"')
+    }
+	}
 	
+		
 	}
 	
 	}
+	
   }
 }
+
+
