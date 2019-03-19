@@ -14,7 +14,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          def antHome = tool 'apache-ant-1.10.5';
+          def antHome = tool 'Ant';
           bat "${antHome}/bin/ant -d clean war"
         }
 
