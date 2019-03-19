@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('SCM') {
       steps {
-        git(url: 'https://github.com/mitesh51/AntExample.git', branch: 'master', poll: true)
+        git(url: 'https://github.com/torafi/JenkinsExample1.git', branch: 'master', poll: true)
       }
     }
     stage('Build') {
