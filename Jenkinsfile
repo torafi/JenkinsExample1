@@ -24,7 +24,7 @@ pipeline {
 	stage ('Deploy') {
 	steps{
 	
-	bat deploy.bat
+	bat 'C:\Users\Hp PC\Desktop\\GIT_Repositories\\JenkinsExample1\\deploy.bat'
 	
 	}
 	
