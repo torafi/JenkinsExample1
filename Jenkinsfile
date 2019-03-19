@@ -21,5 +21,13 @@ pipeline {
         archiveArtifacts(artifacts: '**/*.war', onlyIfSuccessful: true)
       }
     }
+	stage ('Deploy') {
+	steps{
+	
+	bat deploy.bat
+	
+	}
+	
+	}
   }
 }
