@@ -23,12 +23,14 @@ pipeline {
     }
 	stage ('Deploy') {
 	steps{
+	bat """
+		
+		curl -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/AntExample1&update=true" 
+
+		echo "Deploy to tomcat"
+	 
 	
-	echo "Deploy to tomcat"
-	
-	bat 'curl -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/AntExample1&update=true" '
-	
-			
+	"""		
 	}
 	
 	}
