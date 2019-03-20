@@ -23,15 +23,12 @@ pipeline {
     }
 	stage ('Deploy') {
 	steps{
-	script{
-	def cmd_exec(command) {
-    return bat(returnStdout: true, script: "${command}").trim()
 	
-	cmd_exec('curl -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/sample&update=true"')
-    }
-	}
+	echo "Deploy to tomcat"
 	
-		
+	bat 'curl -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/AntExample1&update=true" '
+	
+			
 	}
 	
 	}
