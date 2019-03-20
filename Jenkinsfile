@@ -25,7 +25,7 @@ pipeline {
 	steps{
 	bat """
 		
-		curl -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/AntExample1&update=true" 
+		c:\\commands\\curl.exe -v -u rafi:Dear@786 -T **/*.war "http://localhost:2020/manager/text/deploy?path=/AntExample1&update=true" 
 
 		echo "Deploy to tomcat"
 	 
