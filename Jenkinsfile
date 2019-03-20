@@ -5,6 +5,12 @@ pipeline {
     }
 
   }
+	parameters {
+    string(name: 'server', defaultValue: "http://localhost:2020")
+    string(name: 'Tomcat_username', defaultValue: "rafi")
+	string(name: 'Tomcat_password', defaultValue: "Dear@786")
+	string(name: 'jenkins_artifacts', defaultValue: "E:\\Sample_Code")
+	}
   stages {
     stage('SCM') {
       steps {
@@ -19,16 +25,28 @@ pipeline {
         }
 
         archiveArtifacts(artifacts: '**/*.war', onlyIfSuccessful: true)
+        
+        stash includes: 'dist/**/*', name: 'builtSources'
       }
     }
+    stage('Move the Build'){
+    steps {
+    dir('${params.jenkins_artifacts}'){
+      unstash 'builtSources'
+    
+    }  
+    
+  }
+}
+    
+    
 	stage ('Deploy') {
 	steps{
+	    
+	    
 	bat """
-		
-		c:\\commands\\curl.exe -v -u rafi:Dear@786 -T "C:\\Program Files (x86)\\Jenkins\\jobs\\JenkinsExample1\\branches\\master\\builds\\lastStableBuild\\archive\\dist\\AntExample.war" "http://localhost:2020/manager/text/deploy?path=/AntExample&update=true" 
-
-		echo "Deploy to tomcat"
-	 
+		echo "${params.Tomcat_username}"
+		c:\\commands\\curl.exe -v -u ${params.Tomcat_username}:${params.Tomcat_password} -T "${params.jenkins_artifacts}\\dist\\AntExample.war" "${params.server}/manager/text/deploy?path=/AntExample&update=true" 
 	
 	"""		
 	}
