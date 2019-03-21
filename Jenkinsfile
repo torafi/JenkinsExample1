@@ -32,8 +32,7 @@ pipeline {
     stage('Move the Build'){
     steps {
     dir("${params.jenkins_artifacts}"){
-      
-	  unstash 'builtSources'
+      unstash 'builtSources'
     
     }  
     
@@ -55,6 +54,18 @@ pipeline {
 	}
 	
   }
+	// Post build actions
+    post {
+        always {
+            echo "Always cleanup..."
+        }
+
+        success {
+            echo "Good build. Send email..."
+        }
+
+        failure {
+            echo "Failed build. Send email..., Deploy previous build"
+        }
+    }
 }
-
-
