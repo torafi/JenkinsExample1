@@ -31,8 +31,9 @@ pipeline {
     }
     stage('Move the Build'){
     steps {
-    dir('${params.jenkins_artifacts}'){
-      unstash 'builtSources'
+    dir("${params.jenkins_artifacts}"){
+      
+	  unstash 'builtSources'
     
     }  
     
