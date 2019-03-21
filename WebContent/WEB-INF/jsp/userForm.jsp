@@ -29,8 +29,8 @@
 			<td><form:select path="country">
 				<form:option value="0" label="Select" />
 				<form:option value="1" label="India" />
-				<form:option value="2" label="USA" />
-				<form:option value="3" label="UK" />
+				<form:option value="2" label="KSA" />
+				<form:option value="3" label="US" />
 			</form:select></td>
 		</tr>
 		<tr>
@@ -40,14 +40,14 @@
 		<tr>
 			<td>Community :</td>
 			<td><form:checkbox path="community" value="Spring"
-				label="Spring" /> <form:checkbox path="community" value="Hibernate"
-				label="Hibernate" /> <form:checkbox path="community" value="Struts"
-				label="Struts" /></td>
+				label="Continious Integration" /> <form:checkbox path="community" value="Hibernate"
+				label="Continious Delivery" /> <form:checkbox path="community" value="Struts"
+				label="Continious Deployment" /></td>
 		</tr>
 		<tr>
 			<td></td>
 			<td><form:checkbox path="mailingList"
-				label="Would you like to join our mailinglist?" /></td>
+				label="Would you like to join our DevOps Community?" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit"></td>
