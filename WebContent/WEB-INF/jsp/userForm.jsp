@@ -39,9 +39,9 @@
 		</tr>
 		<tr>
 			<td>Community :</td>
-			<td><form:checkbox path="community" value="Spring"
-				label="Continious Integration" /> <form:checkbox path="community" value="Hibernate"
-				label="Continious Delivery" /> <form:checkbox path="community" value="Struts"
+			<td><form:checkbox path="community" value="Continious Integration"
+				label="Continious Integration" /> <form:checkbox path="community" value="Continious Delivery"
+				label="Continious Delivery" /> <form:checkbox path="community" value="Continious Deployment"
 				label="Continious Deployment" /></td>
 		</tr>
 		<tr>
